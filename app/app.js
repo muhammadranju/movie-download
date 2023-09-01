@@ -1,8 +1,10 @@
 const express = require("express");
 const morgan = require("morgan");
 const compression = require("compression");
+const NodeCache = require("node-cache");
 const app = express();
 
+const myCache = new NodeCache({ stdTTL: 100, checkperiod: 120 });
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 // Middleware
@@ -20,6 +22,7 @@ app.use([
   }),
 ]);
 
+myCache();
 // Routes
 app.use(require("../routes/preFix"));
 module.exports = app;
