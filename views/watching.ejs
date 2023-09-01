@@ -1,0 +1,20 @@
+<%- include('./partials/navbar')  %>
+<main>
+  <div class="container ">
+    <div class="col-md-12 justify-content-center">
+      <div class="card text-center mt-5 p-3 mb-5 bg-body-tertiary rounded">
+        <h5 class="card-title">You must be watch Special Videos </h5>
+        <video class="object-fit-lg-contain rounded" controls>
+          <source src="./files/<%=fileName %>" type="video/mp4">
+        </video>
+
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <a href="/movie"><button class="btn btn-sm btn-outline-dark">movie</button></a>
+    <a href="/watch"><button class="btn btn-sm btn-outline-dark">watch</button></a>
+  </div>
+
+</main>
+<%- include('./partials/footer')  %>
